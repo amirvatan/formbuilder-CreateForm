@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="clockpicker.min.css">
+    <link rel="stylesheet" href="mds.bs.datetimepicker.style.css">
+
+</head>
+<body class="container">
+
+<div class="row">
+    <input type="text" class="form-control mt-4" data-name="date" name="date" id="date" required>
+    <input type="text" class="clockpicker form-control mt-4" name="start_time"
+           id="start_time" required>
+</div>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+<script src="clockpicker.min.js"></script>
+<script src="mds.bs.datetimepicker.js"></script>
+<script>
+    const dtp3Instance = new mds.MdsPersianDateTimePicker(document.getElementById('date'), {
+        targetTextSelector: '[data-name="date"]',
+        dateFormat: 'yyyy-MM-dd',
+        textFormat: 'yyyy-MM-dd',
+        persianNumber: false
+    });
+
+    $('.clockpicker').clockpicker({
+        placement: 'left',
+        align: 'left',
+        donetext: 'انتخاب',
+        autoclose: true,
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="clock%20and%20date%20picker/mds.bs.datetimepicker.style.css">
+    <link rel="stylesheet" href="clock%20and%20date%20picker/clockpicker.min.css">
+
+    <title>Document</title>
+</head>
+<body id="app">
+
+<div class="popover clockpicker-popover d-none clockpicker-align-right">
+    <div class="arrow"></div>
+    <div class="popover-title"><span class="clockpicker-span-hours">18</span> : <span
+            class="clockpicker-span-minutes text-primary">25</span><span
+            class="clockpicker-span-am-pm"></span></div>
+    <div class="popover-content">
+        <div class="clockpicker-plate">
+            <div class="clockpicker-canvas">
+                <svg class="clockpicker-svg" width="200" height="200">
+                    <g transform="translate(100,100)">
+                        <circle class="clockpicker-canvas-bg clockpicker-canvas-bg-trans" r="13"
+                                cx="40.00000000000003"
+                                cy="69.28203230275508"></circle>
+                        <circle class="clockpicker-canvas-fg" r="3.5" cx="40.00000000000003"
+                                cy="69.28203230275508"></circle>
+                        <line x1="0" y1="0" x2="40.00000000000003" y2="69.28203230275508"></line>
+                        <circle class="clockpicker-canvas-bearing" cx="0" cy="0" r="2"></circle>
+                    </g>
+                </svg>
+            </div>
+            <div class="clockpicker-dial clockpicker-hours clockpicker-dial-out"
+                 style="visibility: hidden;">
+                <div class="clockpicker-tick" style="left: 87px; top: 7px;">00</div>
+                <div class="clockpicker-tick" style="left: 114px; top: 40.2346px; font-size: 120%;">1
+                </div>
+                <div class="clockpicker-tick" style="left: 133.765px; top: 60px; font-size: 120%;">2
+                </div>
+                <div class="clockpicker-tick" style="left: 141px; top: 87px; font-size: 120%;">3</div>
+                <div class="clockpicker-tick" style="left: 133.765px; top: 114px; font-size: 120%;">4
+                </div>
+                <div class="clockpicker-tick" style="left: 114px; top: 133.765px; font-size: 120%;">5
+                </div>
+                <div class="clockpicker-tick" style="left: 87px; top: 141px; font-size: 120%;">6</div>
+                <div class="clockpicker-tick" style="left: 60px; top: 133.765px; font-size: 120%;">7
+                </div>
+                <div class="clockpicker-tick" style="left: 40.2346px; top: 114px; font-size: 120%;">8
+                </div>
+                <div class="clockpicker-tick" style="left: 33px; top: 87px; font-size: 120%;">9</div>
+                <div class="clockpicker-tick" style="left: 40.2346px; top: 60px; font-size: 120%;">10
+                </div>
+                <div class="clockpicker-tick" style="left: 60px; top: 40.2346px; font-size: 120%;">11
+                </div>
+                <div class="clockpicker-tick" style="left: 87px; top: 33px; font-size: 120%;">12</div>
+                <div class="clockpicker-tick" style="left: 127px; top: 17.718px;">13</div>
+                <div class="clockpicker-tick" style="left: 156.282px; top: 47px;">14</div>
+                <div class="clockpicker-tick" style="left: 167px; top: 87px;">15</div>
+                <div class="clockpicker-tick" style="left: 156.282px; top: 127px;">16</div>
+                <div class="clockpicker-tick" style="left: 127px; top: 156.282px;">17</div>
+                <div class="clockpicker-tick" style="left: 87px; top: 167px;">18</div>
+                <div class="clockpicker-tick" style="left: 47px; top: 156.282px;">19</div>
+                <div class="clockpicker-tick" style="left: 17.718px; top: 127px;">20</div>
+                <div class="clockpicker-tick" style="left: 7px; top: 87px;">21</div>
+                <div class="clockpicker-tick" style="left: 17.718px; top: 47px;">22</div>
+                <div class="clockpicker-tick" style="left: 47px; top: 17.718px;">23</div>
+            </div>
+            <div class="clockpicker-dial clockpicker-minutes clockpicker-dial-out"
+                 style="visibility: visible;">
+                <div class="clockpicker-tick" style="left: 87px; top: 7px; font-size: 120%;">00</div>
+                <div class="clockpicker-tick" style="left: 127px; top: 17.718px; font-size: 120%;">05
+                </div>
+                <div class="clockpicker-tick" style="left: 156.282px; top: 47px; font-size: 120%;">10
+                </div>
+                <div class="clockpicker-tick" style="left: 167px; top: 87px; font-size: 120%;">15</div>
+                <div class="clockpicker-tick" style="left: 156.282px; top: 127px; font-size: 120%;">20
+                </div>
+                <div class="clockpicker-tick" style="left: 127px; top: 156.282px; font-size: 120%;">25
+                </div>
+                <div class="clockpicker-tick" style="left: 87px; top: 167px; font-size: 120%;">30</div>
+                <div class="clockpicker-tick" style="left: 47px; top: 156.282px; font-size: 120%;">35
+                </div>
+                <div class="clockpicker-tick" style="left: 17.718px; top: 127px; font-size: 120%;">40
+                </div>
+                <div class="clockpicker-tick" style="left: 7px; top: 87px; font-size: 120%;">45</div>
+                <div class="clockpicker-tick" style="left: 17.718px; top: 47px; font-size: 120%;">50
+                </div>
+                <div class="clockpicker-tick" style="left: 47px; top: 17.718px; font-size: 120%;">55
+                </div>
+            </div>
+        </div>
+        <span class="clockpicker-am-pm-block"></span></div>
+</div>
+
+<div class="row justify-content-center mt-5" @mouseover="createComponents">
+    <div class="row col-8  shadow-sm">
+        <div class="col-12 row justify-content-center">
+            <h4 class="m-3 ms-3">[[components[0].title]]</h4>
+            <hr>
+        </div>
+
+
+        <div class="row justify-content-center m-0">
+            <div class="row m-0" id="formholder">
+
+
+                <div v-for="(component,index) in componentFields" :key="index"
+                     :class="'col-12'+ ' ' +  'col-md-'+component.col + ' ' +  'my-2'"
+                     :id="'component' + index">
+
+
+                    <div class="d-flex justify-content-center nullfield form-control mt-2 mb-2 text-center">
+                        <div class="d-flex justify-content-center "></div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5 mb-5 pt-5">
+            <button class="btn btn-success px-5" @click="sendfm">ثبت</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="VueJs/vue.global.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="clock%20and%20date%20picker/mds.bs.datetimepicker.js"></script>
+<script src="clock%20and%20date%20picker/jquery-3.6.0.min.js"></script>
+<script src="clock%20and%20date%20picker/clockpicker.min.js"></script>
+<script>
+    let app = Vue.createApp({
+        delimiters: ['[[', ']]'],
+
+        data() {
+            return {
+                dtp: [],
+                error: '',
+                components: [{
+                    "col": 12,
+                    "name": "header",
+                    "title": "dwada"
+                }, {
+                    "col": 6,
+                    "name": "header",
+                    "title": "اطلاعات آزمایشی"
+                }, {
+                    "col": 6,
+                    "name": "textarea",
+                    "title": "عنوان 5",
+                    "placeholder": "اطلاعات امتحانی",
+                    "label": "هیچچچ",
+                    "required": true
+                }, {
+                    "col": 12,
+                    "name": "file",
+                    "title": "عنوان",
+                    "label": "فایل های کمتر از 1024",
+                    "min_size": "128",
+                    "max_size": "1024",
+                    "formats": [
+                        ".pdf",
+                        ".rar"
+                    ],
+                    "required": true
+                }, {
+                    "col": 6,
+                    "name": "check",
+                    "title": "گزینه های آزمایشی",
+                    "options": [
+                        {
+                            "title": "انتخاب 1"
+                        },
+                        {
+                            "title": "انتخاب 2"
+                        },
+                        {
+                            "title": "انتخاب 3"
+                        },
+                        {
+                            "title": "گزینهه"
+                        },
+                        {
+                            "title": "انتخاب 5"
+                        }
+                    ],
+                    "two_columns": true,
+                    "required": true
+                },
+                    {
+                        "col": 6,
+                        "name": "date",
+                        "title": "عنوان",
+                        "label": "تاریخ امتحانی",
+                        "required": false,
+                        "beforetoday": true
+                    }, {
+                        "col": 6,
+                        "name": "input",
+                        "title": "ورودی",
+                        "placeholder": "متن پیش فرض",
+                        "label": "ایمیل",
+                        "type": "email",
+                        "required": false
+                    },
+                    {
+                        "col": 6,
+                        "name": "select",
+                        "title": "منو کشویی امتحانی",
+                        "label": "4 گزینه ",
+                        "options": [
+                            "انتخاب 1",
+                            "انتخاب 2",
+                            "انتخاب 3",
+                            "انتخاب 4"
+                        ],
+                        "default_option": "انتخاب 4",
+                        "required": true
+                    },
+                    {
+                        "col": "6",
+                        "name": "time",
+                        "title": "شسینتشسیاشسیذش",
+                        "label": "یانتسیذذسیتذز",
+                        "required": true
+                    },
+                    {
+                        "col": "6",
+                        "name": "paragraph",
+                        "text": 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n'
+                    },
+                    {
+                        "col": "12",
+                        "name": "splitter"
+                    },
+                    {
+                        "col": "12",
+                        "name": "space"
+                    },
+                    {
+                        "col": 6,
+                        "name": "radio",
+                        "title": "گزینه های آزمایشی",
+                        "options": [
+                            {
+                                "title": "انتخاب 1"
+                            },
+                            {
+                                "title": "انتخاب 2"
+                            },
+                            {
+                                "title": "انتخاب 3"
+                            },
+                            {
+                                "title": "گزینهه"
+                            },
+                            {
+                                "title": "انتخاب 5"
+                            }
+                        ],
+                        "two_columns": true,
+                        "required": true
+                    },
+                    {
+                        "col": 6,
+                        "name": "table",
+                        "columns": [
+                            {
+                                "title": "ستون 1",
+                                "type": "text"
+                            },
+                            {
+                                "title": "ستون 2",
+                                "type": "checkbox"
+                            },
+                            {
+                                "title": "ستون 3",
+                                "type": "number"
+                            }, {
+                                "title": "ستون 7",
+                                "type": "text"
+                            }, {
+                                "title": "ستون93",
+                                "type": "number"
+                            },
+                            {
+                                "title": "ستون 4",
+                                "type": "email"
+                            },
+                            {
+                                "title": "ستون 5",
+                                "type": "text"
+                            }
+                        ],
+                        "rows": [
+                            {
+                                "title": "سطر 1"
+                            },
+                            {
+                                "title": "سطر 2"
+                            },
+                            {
+                                "title": "سطر 3"
+                            },
+                            {
+                                "title": "سطر 4"
+                            }
+                        ],
+                        "required": true
+                    }],
+                componentFields: []
+
+
+            }
+        },
+        methods: {
+            uploadfilecheck(component, i) {
+                let uploadinput = document.getElementById('uploadfileinput' + i)
+                let errormsg = document.getElementById('errormessage' + i)
+                let bool = false
+                uploadinput.addEventListener('change', function () {
+
+                    for (let i = 0; i < this.files.length; i++) {
+
+
+                        let file = this.files[i]
+                        for (let item of component.formats) {
+                            if (file.name.endsWith(item)) {
+                                bool = true
+                                break;
+                            } else {
+                                bool = false
+
+                            }
+                        }
+                        if (bool === true) {
+                            if (file.size / 1024 > component.max_size || file.size / 1024 < component.min_size) {
+                                uploadinput.value = ''
+                                this.error = "اندازه فایل مناسب نیست"
+                                errormsg.innerHTML = this.error
+                            } else {
+                                this.error = "فایل با موفقیت آپلود شد"
+                                errormsg.innerHTML = this.error
+                            }
+                        } else {
+                            uploadinput.value = ''
+                            this.error = 'فایل مجاز نیست'
+                            errormsg.innerHTML = this.error
+                        }
+
+
+                    }
+
+                })
+
+
+            },
+            removealert(i) {
+                setTimeout(function () {
+                    document.getElementById('alert' + i).remove();
+                }, 3000)
+            },
+            sendfm() {
+                for (let i = 0; i < this.componentFields.length; i++) {
+                    let componentObject = this.componentFields[i]
+                    let component = document.getElementById('component' + i)
+                    if (componentObject.name === 'textarea') {
+                        let object = component.getElementsByTagName('textarea')[0]
+                        if (componentObject.required === true) {
+                            if (object.value === '') {
+                                componentObject.fieldvalue = object.value
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            } else {
+                                componentObject.fieldvalue = object.value
+                            }
+                        } else {
+                            componentObject.fieldvalue = object.value
+
+                        }
+
+                    }
+                    if (componentObject.name === 'date') {
+                        let object = component.getElementsByTagName('input')[0]
+                        if (componentObject.required === true) {
+                            if (object.value === '') {
+                                componentObject.fieldvalue = object.value
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            } else {
+                                componentObject.fieldvalue = object.value
+                            }
+                        } else {
+                            componentObject.fieldvalue = object.value
+
+                        }
+
+                    }
+                    if (componentObject.name === 'time') {
+                        let object = component.getElementsByTagName('input')[0]
+                        if (componentObject.required === true) {
+                            if (object.value === '') {
+                                componentObject.fieldvalue = object.value
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            } else {
+                                componentObject.fieldvalue = object.value
+                            }
+                        } else {
+                            componentObject.fieldvalue = object.value
+
+                        }
+
+                    }
+                    if (componentObject.name === 'input') {
+                        let object = component.getElementsByTagName('input')[0]
+                        if (componentObject.required === true) {
+                            if (object.value === '') {
+                                componentObject.fieldvalue = object.value
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            } else {
+                                componentObject.fieldvalue = object.value
+                            }
+                        } else {
+                            componentObject.fieldvalue = object.value
+
+                        }
+
+                    }
+                    if (componentObject.name === 'select') {
+                        let object = component.getElementsByTagName('select')[0]
+                        if (componentObject.required === true) {
+                            if (object.value === '') {
+                                componentObject.fieldvalue = object.value
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            } else {
+                                componentObject.fieldvalue = object.value
+                            }
+                        } else {
+                            componentObject.fieldvalue = object.value
+
+                        }
+
+                    }
+                    if (componentObject.name === 'file') {
+                        let object = component.getElementsByTagName('input')[0]
+                        if (componentObject.required === true) {
+                            if (object.value === '') {
+                                componentObject.fieldvalue = object.value
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            } else {
+                                componentObject.fieldvalue = object.value
+                            }
+                        } else {
+                            componentObject.fieldvalue = object.value
+
+                        }
+
+                    }
+                    if (componentObject.name === 'check') {
+
+                        let inputs = ''
+                        for (let j = 0; j < componentObject.options.length; j++) {
+                                let object = component.getElementsByTagName('input')[j]
+                                if (object.checked) {
+
+                                    inputs += componentObject.options[j].title
+
+                                }
+                            }
+                        if (componentObject.required === true) {
+
+                            if (inputs === '') {
+                                componentObject.fieldvalue = inputs
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            }
+                            else {
+                                componentObject.fieldvalue = inputs
+                            }
+
+                        } else {
+                            componentObject.fieldvalue = inputs
+
+                        }
+
+                    }
+                    if (componentObject.name === 'radio') {
+
+                        let inputs = ''
+                        for (let j = 0; j < componentObject.options.length; j++) {
+                                let object = component.getElementsByTagName('input')[j]
+                                if (object.checked) {
+
+                                    inputs += componentObject.options[j].title
+
+                                }
+                            }
+                        if (componentObject.required === true) {
+
+                            if (inputs === '') {
+                                componentObject.fieldvalue = inputs
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            }
+                            else {
+                                componentObject.fieldvalue = inputs
+                            }
+
+                        } else {
+                            componentObject.fieldvalue = inputs
+
+                        }
+
+                    }
+
+                }
+                console.log(this.componentFields)
+
+            }
+        },
+        beforeMount() {
+            this.componentFields = this.components.slice(1)
+
+
+        },
+        mounted() {
+            let formHolder = document.getElementById('formholder')
+
+            let divs = formHolder.getElementsByTagName('div')
+
+            for (let i = 0; i < this.componentFields.length; i++) {
+                let componentObject = this.componentFields[i]
+
+                let component = document.getElementById('component' + i)
+                if (componentObject.name === 'header') {
+                    component.innerHTML = `<div>  <h5>${componentObject.title}</h5>  </div>`
+                }
+                if (componentObject.name === 'textarea') {
+                    component.innerHTML = `<h5 class="">${componentObject.title}</h5> <textarea class="form-control "
+                             placeholder=""></textarea> <small>${componentObject.label}</small>`
+                }
+                if (componentObject.name === 'file') {
+                    component.innerHTML = `<h5 class="mb-3">${componentObject.title}</h5> <label for=${'uploadfileinput' + i} class="btn border-3 border-dark " >بارگزاری </label> <input id=${'uploadfileinput' + i} accept=${componentObject.formats} class="visually-hidden" type="file"
+                                                                                                  placeholder="" ></input> <small class="d-block">${componentObject.label}</small>  <strong id=${'errormessage' + i}></strong>  `
+                    this.uploadfilecheck(componentObject, i)
+                }
+                if (componentObject.name === 'check') {
+                    let inputs = ''
+                    for (let item in componentObject.options) {
+                        if (componentObject.two_columns === true) {
+                            inputs += `<div class="col-6 form-check"><label class="form-check-label">${componentObject.options[item].title} </label><input id=${'checkbox' + i + '-' + item} class="form-check-input" type="checkbox"></div>`
+                        } else {
+                            inputs += `<div class="col-12 form-check"><label class="form-check-label">${componentObject.options[item].title} </label><input id=${'checkbox' + i + '-' + item} class="form-check-input" type="checkbox"></div>`
+
+                        }
+                    }
+                    component.innerHTML = `<h5 class="">${componentObject.title}</h5> <div class="row">${inputs}</div>`
+                }
+                if (componentObject.name === 'radio') {
+                    let inputs = ''
+                    for (let item in componentObject.options) {
+                        if (componentObject.two_columns === true) {
+                            inputs += `<div class="col-6 form-check"><label class="form-check-label">${componentObject.options[item].title} </label><input id=${'radiobox' + i + '-' + item} class="form-check-input" type="radio" name=${'radio' + i}></div>`
+                        } else {
+                            inputs += `<div class="col-12 form-check"><label class="form-check-label">${componentObject.options[item].title} </label><input id=${'radiobox' + i + '-' + item} class="form-check-input" type="radio" name=${'radio' + i}></div>`
+
+                        }
+                    }
+                    component.innerHTML = `<h5 class="">${componentObject.title}</h5> <div class="row">${inputs}</div>`
+                }
+                if (componentObject.name === 'date') {
+                    component.innerHTML = `<h5 class="">${componentObject.title}</h5><div class = "input-group mb-3" ><span class = "input-group-text bg-white" id = "basic-addon1" > <i class = "fa-solid fa-calendar" > </i></span ><input id=${'date' + i} type="text" class="form-control py-3 datepicker" data-name=${'date' + i} data-mds-dtp-guid="27c14080-893f-458e-9d3e-35c69d0d60f0" name="date"></div> <small>${componentObject.label}</small >`
+
+                    if (componentObject.beforetoday === true) {
+                        this.dtp[i] = new mds.MdsPersianDateTimePicker(document.getElementById('date' + i), {
+                            targetTextSelector: `[data-name=text${i}]`,
+                            targetDateSelector: `[data-name=date${i}]`,
+                            dateFormat: 'yyyy-MM-dd',
+                            textFormat: 'yyyy-MM-dd',
+                            persianNumber: false,
+                            disableBeforeToday: true
+
+                        });
+                    } else {
+                        this.dtp[i] = new mds.MdsPersianDateTimePicker(document.getElementById('date' + i), {
+                            targetTextSelector: `[data-name=text${i}]`,
+                            targetDateSelector: `[data-name=date${i}]`,
+                            dateFormat: 'yyyy-MM-dd',
+                            textFormat: 'yyyy-MM-dd',
+                            persianNumber: false,
+                            disableBeforeToday: false
+
+                        });
+                    }
+
+
+                }
+                if (componentObject.name === 'time') {
+                    component.innerHTML = `<h5 class="">${componentObject.title}</h5><div class ="input-group mb-3 clockpicker" ><span class = "input-group-text bg-white" id = "basic-addon1" > <i class = "fa-solid fa-clock" > </i></span ><input id="start_time" name="start_time" type="text" class="form-control py-3 datepicker" data-name=${'date' + i} data-mds-dtp-guid="27c14080-893f-458e-9d3e-35c69d0d60f0" name="date"></div> <small>${componentObject.label}</small >`
+
+                    $('.clockpicker').clockpicker({
+                        placement: 'right',
+                        align: 'left',
+                        donetext: 'انتخاب',
+                        autoclose: true,
+                    });
+
+
+                }
+                if (componentObject.name === 'input') {
+                    component.innerHTML = `<h5 class="">${componentObject.title}</h5> <input id=${'input' + i} type=${componentObject.type} class="form-control py-3"
+                                                                                                  placeholder=${componentObject.placeholder} required=${componentObject.required}> <small>${componentObject.label}</small>`
+                }
+                if (componentObject.name === 'select') {
+                    let inputs = ''
+                    for (let item of componentObject.options) {
+                        if (item === componentObject.default_option) {
+                            inputs += `<option selected value='${item}'>${item}</option>`
+
+                        } else {
+                            inputs += `<option value='${item}'>${item}</option>`
+
+                        }
+                    }
+
+
+                    component.innerHTML = `<h5 class="">${componentObject.title}</h5> <select class="form-select py-3" > ${inputs}</select> <small>${componentObject.label}</small>`
+                }
+                if (componentObject.name === 'paragraph') {
+                    component.innerHTML = `<div style="width: border-box;word-wrap: break-word"><h5 class="py-2 mt-3">${componentObject.text}</h5></div>`
+                }
+                if (componentObject.name === 'splitter') {
+                    component.innerHTML = `<hr>`
+                }
+                if (componentObject.name === 'space') {
+                    component.innerHTML = `<div style="width: border-box;height: 50px"></div>`
+                }
+                if (componentObject.name === 'table') {
+                    let coulmns = '<th>                  </th>   '
+                    let rows = ''
+
+
+                    let optiontag = null
+                    for (let item of componentObject.columns) {
+                        optiontag = `<th class="">${item.title}</th>`
+
+                        coulmns += optiontag
+                    }
+                    for (let item of componentObject.rows) {
+                        let colomnsvalue = ''
+                        for (let col in componentObject.columns) {
+                            colomnsvalue += `<td class="p-1"><input type="${componentObject.columns[col].type}"></td>`
+                        }
+                        optiontag = `<tr> <th scope="row">${item.title}</th>` + colomnsvalue + `</tr>`
+
+                        rows += optiontag
+                    }
+
+                    component.innerHTML = `<div style="width: border-box!important;"><table style=""> <thead>${coulmns}</thead> <tbody>${rows}</tbody> </table></div>`
+
+                }
+
+            }
+
+
+        }
+
+    })
+    app.mount('#app')
+
+</script>
+</body>
+</html>
