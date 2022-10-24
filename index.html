@@ -276,44 +276,52 @@
                         "name": "table",
                         "columns": [
                             {
-                                "title": "ستون 1",
-                                "type": "text"
+                                "title": "ستون 1"
+
                             },
                             {
-                                "title": "ستون 2",
-                                "type": "checkbox"
+                                "title": "ستون 2"
+
                             },
                             {
-                                "title": "ستون 3",
-                                "type": "number"
+                                "title": "ستون 3"
+
                             }, {
-                                "title": "ستون 7",
-                                "type": "text"
+                                "title": "ستون 7"
+
                             }, {
-                                "title": "ستون93",
-                                "type": "number"
+                                "title": "ستون93"
+
                             },
                             {
-                                "title": "ستون 4",
-                                "type": "email"
+                                "title": "ستون 4"
+
                             },
                             {
-                                "title": "ستون 5",
-                                "type": "text"
+                                "title": "ستون 5"
+
                             }
                         ],
                         "rows": [
                             {
-                                "title": "سطر 1"
+                                "title": "سطر 1",
+                                "type": "text"
                             },
                             {
-                                "title": "سطر 2"
+                                "title": "سطر 2",
+                                "type": "checkbox"
                             },
                             {
-                                "title": "سطر 3"
+                                "title": "سطر 3",
+                                "type": "radio"
                             },
                             {
-                                "title": "سطر 4"
+                                "title": "سطر 3",
+                                "type": "radio"
+                            },
+                            {
+                                "title": "سطر 4",
+                                "type": "checkbox"
                             }
                         ],
                         "required": true
@@ -474,21 +482,20 @@
 
                         let inputs = ''
                         for (let j = 0; j < componentObject.options.length; j++) {
-                                let object = component.getElementsByTagName('input')[j]
-                                if (object.checked) {
+                            let object = component.getElementsByTagName('input')[j]
+                            if (object.checked) {
 
-                                    inputs += componentObject.options[j].title
+                                inputs += componentObject.options[j].title
 
-                                }
                             }
+                        }
                         if (componentObject.required === true) {
 
                             if (inputs === '') {
                                 componentObject.fieldvalue = inputs
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
-                            }
-                            else {
+                            } else {
                                 componentObject.fieldvalue = inputs
                             }
 
@@ -502,21 +509,20 @@
 
                         let inputs = ''
                         for (let j = 0; j < componentObject.options.length; j++) {
-                                let object = component.getElementsByTagName('input')[j]
-                                if (object.checked) {
+                            let object = component.getElementsByTagName('input')[j]
+                            if (object.checked) {
 
-                                    inputs += componentObject.options[j].title
+                                inputs += componentObject.options[j].title
 
-                                }
                             }
+                        }
                         if (componentObject.required === true) {
 
                             if (inputs === '') {
                                 componentObject.fieldvalue = inputs
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
-                            }
-                            else {
+                            } else {
                                 componentObject.fieldvalue = inputs
                             }
 
@@ -524,6 +530,40 @@
                             componentObject.fieldvalue = inputs
 
                         }
+
+                    }
+                    if (componentObject.name === 'table') {
+                        let componenttable = component.getElementsByTagName('tbody')[0]
+                        if (componentObject.required === true) {
+                            componentObject.fieldvalue = []
+                            for (let index = 0; index < componentObject.rows.length; index++) {
+                                let trs = componenttable.getElementsByTagName('tr')[index]
+                                if (componentObject.rows[index].type === 'text' || componentObject.rows[index].type === 'email' || componentObject.rows[index].type === 'number' || componentObject.rows[index].type === 'tel') {
+
+                                    for (let item = 0; item < componentObject.columns.length; item++) {
+                                        let value = trs.getElementsByClassName('tdtable')[item].getElementsByTagName('input')[0]
+                                        if (value.value === ''){
+
+                                        }
+                                        else {
+                                            componentObject.fieldvalue.push(value.value)
+                                        }
+
+                                    }
+                                }
+                                if (componentObject.rows[index].type === 'checkbox' || componentObject.rows[index].type === 'radio') {
+
+                                    for (let item = 0; item < componentObject.columns.length; item++) {
+                                        let value = trs.getElementsByClassName('tdtable')[item].getElementsByTagName('input')[0]
+                                        if (value.checked) {
+                                            componentObject.fieldvalue.push(componentObject.columns[item].title)
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
 
                     }
 
@@ -660,12 +700,17 @@
 
                         coulmns += optiontag
                     }
-                    for (let item of componentObject.rows) {
+                    for (let item in componentObject.rows) {
                         let colomnsvalue = ''
                         for (let col in componentObject.columns) {
-                            colomnsvalue += `<td class="p-1"><input type="${componentObject.columns[col].type}"></td>`
+                            if (componentObject.rows[item].type === 'radio') {
+                                colomnsvalue += `<td class="p-1 tdtable"><input name='${'tableradio' + item}' type="${componentObject.rows[item].type}"></td>`
+                            } else {
+                                colomnsvalue += `<td class="p-1 tdtable"><input type="${componentObject.rows[item].type}"></td>`
+                            }
+
                         }
-                        optiontag = `<tr> <th scope="row">${item.title}</th>` + colomnsvalue + `</tr>`
+                        optiontag = `<tr> <th scope="row">${componentObject.rows[item].title}</th>` + colomnsvalue + `</tr>`
 
                         rows += optiontag
                     }
