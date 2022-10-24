@@ -383,115 +383,130 @@
                     let componentObject = this.componentFields[i]
                     let component = document.getElementById('component' + i)
                     if (componentObject.name === 'textarea') {
+                        componentObject.fieldvalue = []
                         let object = component.getElementsByTagName('textarea')[0]
                         if (componentObject.required === true) {
                             if (object.value === '') {
-                                componentObject.fieldvalue = object.value
+
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
                             } else {
-                                componentObject.fieldvalue = object.value
+                                componentObject.fieldvalue.push(object.value)
                             }
                         } else {
-                            componentObject.fieldvalue = object.value
+                            componentObject.fieldvalue.push(object.value)
 
                         }
 
                     }
                     if (componentObject.name === 'date') {
+                        componentObject.fieldvalue = []
                         let object = component.getElementsByTagName('input')[0]
                         if (componentObject.required === true) {
                             if (object.value === '') {
-                                componentObject.fieldvalue = object.value
+
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
                             } else {
-                                componentObject.fieldvalue = object.value
+                                componentObject.fieldvalue.push(object.value)
                             }
                         } else {
-                            componentObject.fieldvalue = object.value
+                            componentObject.fieldvalue.push(object.value)
+
 
                         }
 
                     }
                     if (componentObject.name === 'time') {
+                        componentObject.fieldvalue = []
                         let object = component.getElementsByTagName('input')[0]
                         if (componentObject.required === true) {
                             if (object.value === '') {
-                                componentObject.fieldvalue = object.value
+
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
                             } else {
-                                componentObject.fieldvalue = object.value
+                                componentObject.fieldvalue.push(object.value)
+
                             }
                         } else {
-                            componentObject.fieldvalue = object.value
+                            componentObject.fieldvalue.push(object.value)
+
 
                         }
 
                     }
                     if (componentObject.name === 'input') {
+                        componentObject.fieldvalue = []
                         let object = component.getElementsByTagName('input')[0]
                         if (componentObject.required === true) {
                             if (object.value === '') {
-                                componentObject.fieldvalue = object.value
+
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
                             } else {
-                                componentObject.fieldvalue = object.value
+                                componentObject.fieldvalue.push(object.value)
+
                             }
                         } else {
-                            componentObject.fieldvalue = object.value
+                            componentObject.fieldvalue.push(object.value)
+
 
                         }
 
                     }
                     if (componentObject.name === 'select') {
+                        componentObject.fieldvalue = []
                         let object = component.getElementsByTagName('select')[0]
                         if (componentObject.required === true) {
                             if (object.value === '') {
-                                componentObject.fieldvalue = object.value
+
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
                             } else {
-                                componentObject.fieldvalue = object.value
+                                componentObject.fieldvalue.push(object.value)
+
                             }
                         } else {
-                            componentObject.fieldvalue = object.value
+                            componentObject.fieldvalue.push(object.value)
+
 
                         }
 
                     }
                     if (componentObject.name === 'file') {
+                        componentObject.fieldvalue = []
                         let object = component.getElementsByTagName('input')[0]
                         if (componentObject.required === true) {
                             if (object.value === '') {
-                                componentObject.fieldvalue = object.value
+
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
                             } else {
-                                componentObject.fieldvalue = object.value
+                                componentObject.fieldvalue.push(object.value)
+
                             }
                         } else {
-                            componentObject.fieldvalue = object.value
+                            componentObject.fieldvalue.push(object.value)
+
 
                         }
 
                     }
                     if (componentObject.name === 'check') {
 
-                        let inputs = ''
+                        let inputs = []
                         for (let j = 0; j < componentObject.options.length; j++) {
                             let object = component.getElementsByTagName('input')[j]
                             if (object.checked) {
 
-                                inputs += componentObject.options[j].title
+                                inputs.push(componentObject.options[j].title)
 
                             }
                         }
                         if (componentObject.required === true) {
 
-                            if (inputs === '') {
+                            if (inputs.length === 0) {
                                 componentObject.fieldvalue = inputs
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
@@ -507,18 +522,18 @@
                     }
                     if (componentObject.name === 'radio') {
 
-                        let inputs = ''
+                        let inputs = []
                         for (let j = 0; j < componentObject.options.length; j++) {
                             let object = component.getElementsByTagName('input')[j]
                             if (object.checked) {
 
-                                inputs += componentObject.options[j].title
+                                inputs.push(componentObject.options[j].title)
 
                             }
                         }
                         if (componentObject.required === true) {
 
-                            if (inputs === '') {
+                            if (inputs.length === 0) {
                                 componentObject.fieldvalue = inputs
                                 component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
                                 this.removealert(i)
@@ -533,35 +548,46 @@
 
                     }
                     if (componentObject.name === 'table') {
+                        let inputs = []
                         let componenttable = component.getElementsByTagName('tbody')[0]
-                        if (componentObject.required === true) {
-                            componentObject.fieldvalue = []
-                            for (let index = 0; index < componentObject.rows.length; index++) {
-                                let trs = componenttable.getElementsByTagName('tr')[index]
-                                if (componentObject.rows[index].type === 'text' || componentObject.rows[index].type === 'email' || componentObject.rows[index].type === 'number' || componentObject.rows[index].type === 'tel') {
+                        for (let index = 0; index < componentObject.rows.length; index++) {
+                            let trs = componenttable.getElementsByTagName('tr')[index]
+                            if (componentObject.rows[index].type === 'text' || componentObject.rows[index].type === 'email' || componentObject.rows[index].type === 'number' || componentObject.rows[index].type === 'tel') {
 
-                                    for (let item = 0; item < componentObject.columns.length; item++) {
-                                        let value = trs.getElementsByClassName('tdtable')[item].getElementsByTagName('input')[0]
-                                        if (value.value === ''){
+                                for (let item = 0; item < componentObject.columns.length; item++) {
+                                    let value = trs.getElementsByClassName('tdtable')[item].getElementsByTagName('input')[0]
+                                    if (value.value === '') {
 
-                                        }
-                                        else {
-                                            componentObject.fieldvalue.push(value.value)
-                                        }
-
+                                    } else {
+                                        inputs.push(value.value)
                                     }
-                                }
-                                if (componentObject.rows[index].type === 'checkbox' || componentObject.rows[index].type === 'radio') {
 
-                                    for (let item = 0; item < componentObject.columns.length; item++) {
-                                        let value = trs.getElementsByClassName('tdtable')[item].getElementsByTagName('input')[0]
-                                        if (value.checked) {
-                                            componentObject.fieldvalue.push(componentObject.columns[item].title)
-                                        }
-
-                                    }
                                 }
                             }
+                            if (componentObject.rows[index].type === 'checkbox' || componentObject.rows[index].type === 'radio') {
+
+                                for (let item = 0; item < componentObject.columns.length; item++) {
+                                    let value = trs.getElementsByClassName('tdtable')[item].getElementsByTagName('input')[0]
+                                    if (value.checked) {
+                                        inputs.push(componentObject.columns[item].title)
+                                    }
+
+                                }
+                            }
+                        }
+                        if (componentObject.required === true) {
+
+                            if (inputs.length === 0) {
+                                componentObject.fieldvalue = inputs
+                                component.insertAdjacentHTML('afterbegin', `<div class="text-danger" id=${'alert' + i}>لطفا فیلد را پر کنید</div>`)
+                                this.removealert(i)
+                            } else {
+                                componentObject.fieldvalue = inputs
+                            }
+
+                        } else {
+                            componentObject.fieldvalue = inputs
+
                         }
 
 
